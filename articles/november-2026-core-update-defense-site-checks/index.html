@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checking a Defense Site During Google's November 2026 Core Update</title><meta name="description" content="Google&#x27;s November 2026 core update began on November 10. Here is how a defense firm should read its rankings and Search Console data while the rollout runs."><link rel="canonical" href="https://sbdmarketing.github.io/articles/november-2026-core-update-defense-site-checks/">
+<meta property="og:type" content="website"><meta property="og:title" content="Checking a Defense Site During Google&#x27;s November 2026 Core Update"><meta property="og:description" content="Google&#x27;s November 2026 core update began on November 10. Here is how a defense firm should read its rankings and Search Console data while the rollout runs."><meta property="og:url" content="https://sbdmarketing.github.io/articles/november-2026-core-update-defense-site-checks/">
+<meta name="robots" content="index,follow"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6bff'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='24' text-anchor='middle' fill='white'%3ESBD%3C/text%3E%3C/svg%3E">
+<style>
+:root{--dark:#0c1a33;--accent:#1f6bff;--soft:#eef4ff;--ink:#14161a;--muted:#5b6170;--line:#e4e7ee;--bg:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px;margin:0 auto;padding:0 20px}
+header.top{background:var(--dark);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.01em}
+.mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-size:13px;font-weight:900}
+nav.top a{color:#cfd6e6;text-decoration:none;font-size:15px;margin-left:18px}nav.top a:hover{color:#fff}
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark) 55%,var(--accent) 160%);color:#fff;padding:72px 0 64px}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:700;color:#9fb6ff}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:10px 0 16px;letter-spacing:-.02em;max-width:820px}
+.hero p{font-size:1.15rem;color:#dbe3f4;max-width:720px;margin:0 0 12px}
+.hero a{color:#fff;font-weight:700}
+.pill{display:inline-block;margin-top:18px;background:#fff;color:var(--dark)!important;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px}
+section{padding:56px 0}
+section.alt{background:var(--soft)}
+h2.sec{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.01em;margin:0 0 8px}
+p.lede{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(12,26,51,.10)}
+.card .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card h3{font-size:1.15rem;line-height:1.35;margin:0 0 10px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .more{margin-top:auto;padding-top:14px;color:var(--accent);font-weight:700;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tile{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line)}
+.tile b{display:block;margin-bottom:6px}
+article{padding:48px 0 24px}
+.crumb{font-size:14px;margin-bottom:18px}.crumb a{text-decoration:none;font-weight:600}
+article h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+.byline{color:var(--muted);font-size:14.5px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+article h2{font-size:1.5rem;line-height:1.3;margin:2.1em 0 .5em;letter-spacing:-.01em}
+article h3{font-size:1.15rem;margin:1.6em 0 .3em}
+article ul,article ol{padding-left:1.3em}article li{margin:.35em 0}
+.toc{background:var(--soft);border-radius:14px;padding:18px 22px;margin:0 0 28px;font-size:15.5px}
+.toc b{display:block;margin-bottom:6px}.toc ol{margin:0;padding-left:1.2em}
+.related{border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+.related ul{list-style:none;padding:0}.related li{margin:.5em 0}
+footer{background:var(--dark);color:#aeb8cc;font-size:14.5px;padding:32px 0;margin-top:40px}
+footer a{color:#fff}
+@media(max-width:640px){nav.top a{margin-left:12px;font-size:14px}.hero{padding:52px 0 44px}section{padding:40px 0}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Checking a Defense Site During Google's November 2026 Core Update", "description": "Google's November 2026 core update began on November 10. Here is how a defense firm should read its rankings and Search Console data while the rollout runs.", "datePublished": "2026-11-13", "mainEntityOfPage": "https://sbdmarketing.github.io/articles/november-2026-core-update-defense-site-checks/", "author": {"@type": "Organization", "name": "SBD Marketing"}, "publisher": {"@type": "Organization", "name": "SBD Marketing"}}</script></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="../../"><span class="mark">SBD</span>Criminal Defense SEO Field Notes</a><nav class="top"><a href="../../#articles">Articles</a><a href="../../#about">About</a></nav></div></header>
+<article><div class="narrow"><div class="crumb"><a href="../../">← Criminal Defense SEO Field Notes</a></div><h1>Checking a Defense Site During Google's November 2026 Core Update</h1>
+<div class="byline">SBD Marketing · November 13, 2026 · 5 min read</div><nav class="toc"><b>In this article</b><ol><li><a href="#what-google-has-said-about-this-update">What Google has said about this update</a></li><li><a href="#why-a-mid-rollout-drop-is-a-poor-signal">Why a mid-rollout drop is a poor signal</a></li><li><a href="#the-checks-worth-doing-after-the-rollout-ends">The checks worth doing after the rollout ends</a></li><li><a href="#what-to-do-if-a-charge-page-really-did-lose-ground">What to do if a charge page really did lose ground</a></li><li><a href="#changes-to-hold-off-on">Changes to hold off on</a></li><li><a href="#questions-defense-lawyers-ask-about-core-updates">Questions defense lawyers ask about core updates</a></li></ol></nav>
+<p>Google started rolling out its November 2026 core update on November 10, and its Search Status Dashboard says the rollout may take up to two weeks. If your firm's DUI page dropped three spots on Wednesday and climbed back on Friday, that is what a rollout in progress tends to look like. One day of data tells you very little.</p>
+<p>Defense lawyers tend to notice these updates through a phone that rings less, or through a call from whoever handles their SEO. Both reactions are understandable. The hard part is resisting the urge to rewrite pages in the middle of the rollout, because changes made now get tangled up with the update itself, and you lose any chance of knowing what helped or hurt.</p>
+<h2 id="what-google-has-said-about-this-update">What Google has said about this update</h2>
+<p>Google described the November update as a regular core update meant to surface relevant, satisfying content from all types of sites. It applies globally and in all languages. Google did not name a specific target, such as a type of spam or a class of site, and that is normal for core updates.</p>
+<p>The previous core update ran from May 21 to June 2, 2026. If your firm saw a shift in late May, keep that in mind when you compare periods, because some of what you see now may be a correction of what happened then.</p>
+<p>Google keeps a page in Search Central documentation about core updates. Its main advice has stayed the same for a long time: wait until the rollout is finished, then wait at least a full week more before you compare results. Compare that week with a week from before the rollout started.</p>
+<h2 id="why-a-mid-rollout-drop-is-a-poor-signal">Why a mid-rollout drop is a poor signal</h2>
+<p>Criminal defense searches are noisy to begin with. A weekend with a big local event can push up searches for public intoxication or assault charges. A holiday changes DUI arrest patterns. Courthouse calendars affect when people search for help with a probation violation or a warrant.</p>
+<p>Put a core update on top of that, and a three-day dip can come from almost anything. Search Console data also arrives with a delay of a day or two, so what you see on any given morning is already old.</p>
+<p>A better habit during the rollout is to write things down. Note the date you first saw a change, which pages moved and for which queries. That log will be useful in early December when the data has settled.</p>
+<h2 id="the-checks-worth-doing-after-the-rollout-ends">The checks worth doing after the rollout ends</h2>
+<p>Once Google marks the update complete on its dashboard, give it a week. Then work through these in order:</p>
+<ol><li>In Search Console, open the Performance report and compare the week after completion with a week before November 10. Use the same days of the week for both.</li><li>Filter to pages and sort by the change in clicks. Look at charge pages first, since those bring in most new cases for a defense firm.</li><li>For each page that lost clicks, check whether impressions fell too. Fewer impressions usually means lower rankings. Steady impressions with fewer clicks points to a change in how the results page looks, such as an AI Overview or a new map pack layout above you.</li><li>Separate searches for your firm's name from searches for charges. A drop in branded clicks is rarely a core update problem.</li></ol>
+<p>That last step matters more than most firms expect. If you have not set up that split before, this guide on <a href="https://telegra.ph/Separating-Branded-From-Unbranded-Searches-in-Search-Console-11-12">separating branded searches from charge searches in Search Console</a> walks through it.</p>
+<h2 id="what-to-do-if-a-charge-page-really-did-lose-ground">What to do if a charge page really did lose ground</h2>
+<p>Suppose your felony DUI page lost a third of its clicks and stayed down two weeks after the rollout ended. Google's general guidance is that core update drops are not penalties and that there is often nothing specific to fix. It points site owners toward its guidance on helpful, reliable, people-first content instead.</p>
+<p>For a defense firm, that usually means reading the page as a frightened person would, then reading the pages that now rank above it. Ask some plain questions:</p>
+<ul><li>Does the page explain what the charge means in your state, with accurate penalties and the court process?</li><li>Does it say who wrote it and show that a licensed lawyer stands behind it?</li><li>Is it padded with city names and repeated phrases that add nothing for the reader?</li><li>Do the pages above yours answer the questions people actually ask, such as whether they will lose their license or need to miss work for court?</li></ul>
+<p>If the honest answer is that a competitor's page is more useful, rewrite yours with that in mind. If your page is already strong, patience is often the right call. Rankings sometimes recover with a later update without any change on your end.</p>
+<h2 id="changes-to-hold-off-on">Changes to hold off on</h2>
+<p>A few reactions cause more harm than the update itself. Avoid deleting pages because they lost traffic during the rollout. Avoid changing title tags across the whole site at once. Do not buy links in a panic or hire someone who promises a fast recovery. Any of these can create new problems that have nothing to do with the update.</p>
+<p>Keep publishing the pages you had already planned, and record each date so you can separate their effect from the update's.</p>
+<p>If you want a running record of updates like this one and what they meant for law firms, the <a href="https://officialsbdmarketing.news.blog/">legal SEO and AI search news archive</a> keeps short notes on each change as it happens.</p>
+<h2 id="questions-defense-lawyers-ask-about-core-updates">Questions defense lawyers ask about core updates</h2>
+<h3>How long will the November 2026 core update take?</h3>
+<p>Google said the rollout may take up to two weeks from its November 10 start. Watch the Search Status Dashboard, which marks the update complete when it is done.</p>
+<h3>Should I change my website while the update is rolling out?</h3>
+<p>Hold off on major changes until a week after the rollout ends. Small fixes such as correcting a broken phone link are fine, and regular publishing can continue.</p>
+<h3>Is a ranking drop after a core update a penalty?</h3>
+<p>No. Google treats core updates as broad changes to how it ranks content, and manual penalties show up separately in Search Console under Manual actions. Check that report if you are worried.</p>
+<p>SBD Marketing works only with criminal defense firms, and only one firm per city. It builds websites for defense practices, handles SEO for the charges a firm defends, runs SEO audits, and works on getting firms named in AI tools such as ChatGPT, Gemini and Perplexity.</p>
+<div class="related"><b>More from Criminal Defense SEO Field Notes</b><ul><li><a href="../year-over-year-search-data-seasonal-charges/">Reading Year-Over-Year Search Data for Seasonal Criminal Charges</a></li><li><a href="../weekly-seo-routine-defense-lawyer-new-to-marketing/">A Two-Hour Weekly SEO Routine for a Defense Lawyer New to Marketing</a></li><li><a href="../defense-firm-charge-page-cannibalization/">Ending Keyword Cannibalization Between Defense Firm Charge Pages</a></li><li><a href="../defense-site-duplicate-pages-canonical-tags/">Fixing Duplicate Pages and Canonical Tags on a Defense Firm Site</a></li></ul></div></div></article><footer><div class="wrap">© 2026 SBD Marketing · <a href="../../">Criminal Defense SEO Field Notes</a></div></footer>
+</body></html>
