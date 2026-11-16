@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cleaning Up Thin Archive Pages on a Criminal Defense Firm Blog</title><meta name="description" content="How to find tag, author and date archive pages on a defense firm blog, decide which deserve a place in search, and clean up the rest without breaking links."><link rel="canonical" href="https://sbdmarketing.github.io/articles/defense-firm-blog-thin-archive-pages/">
+<meta property="og:type" content="website"><meta property="og:title" content="Cleaning Up Thin Archive Pages on a Criminal Defense Firm Blog"><meta property="og:description" content="How to find tag, author and date archive pages on a defense firm blog, decide which deserve a place in search, and clean up the rest without breaking links."><meta property="og:url" content="https://sbdmarketing.github.io/articles/defense-firm-blog-thin-archive-pages/">
+<meta name="robots" content="index,follow"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6bff'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='24' text-anchor='middle' fill='white'%3ESBD%3C/text%3E%3C/svg%3E">
+<style>
+:root{--dark:#0c1a33;--accent:#1f6bff;--soft:#eef4ff;--ink:#14161a;--muted:#5b6170;--line:#e4e7ee;--bg:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px;margin:0 auto;padding:0 20px}
+header.top{background:var(--dark);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.01em}
+.mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-size:13px;font-weight:900}
+nav.top a{color:#cfd6e6;text-decoration:none;font-size:15px;margin-left:18px}nav.top a:hover{color:#fff}
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark) 55%,var(--accent) 160%);color:#fff;padding:72px 0 64px}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:700;color:#9fb6ff}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:10px 0 16px;letter-spacing:-.02em;max-width:820px}
+.hero p{font-size:1.15rem;color:#dbe3f4;max-width:720px;margin:0 0 12px}
+.hero a{color:#fff;font-weight:700}
+.pill{display:inline-block;margin-top:18px;background:#fff;color:var(--dark)!important;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px}
+section{padding:56px 0}
+section.alt{background:var(--soft)}
+h2.sec{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.01em;margin:0 0 8px}
+p.lede{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(12,26,51,.10)}
+.card .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card h3{font-size:1.15rem;line-height:1.35;margin:0 0 10px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .more{margin-top:auto;padding-top:14px;color:var(--accent);font-weight:700;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tile{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line)}
+.tile b{display:block;margin-bottom:6px}
+article{padding:48px 0 24px}
+.crumb{font-size:14px;margin-bottom:18px}.crumb a{text-decoration:none;font-weight:600}
+article h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+.byline{color:var(--muted);font-size:14.5px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+article h2{font-size:1.5rem;line-height:1.3;margin:2.1em 0 .5em;letter-spacing:-.01em}
+article h3{font-size:1.15rem;margin:1.6em 0 .3em}
+article ul,article ol{padding-left:1.3em}article li{margin:.35em 0}
+.toc{background:var(--soft);border-radius:14px;padding:18px 22px;margin:0 0 28px;font-size:15.5px}
+.toc b{display:block;margin-bottom:6px}.toc ol{margin:0;padding-left:1.2em}
+.related{border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+.related ul{list-style:none;padding:0}.related li{margin:.5em 0}
+footer{background:var(--dark);color:#aeb8cc;font-size:14.5px;padding:32px 0;margin-top:40px}
+footer a{color:#fff}
+@media(max-width:640px){nav.top a{margin-left:12px;font-size:14px}.hero{padding:52px 0 44px}section{padding:40px 0}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cleaning Up Thin Archive Pages on a Criminal Defense Firm Blog", "description": "How to find tag, author and date archive pages on a defense firm blog, decide which deserve a place in search, and clean up the rest without breaking links.", "datePublished": "2026-11-16", "mainEntityOfPage": "https://sbdmarketing.github.io/articles/defense-firm-blog-thin-archive-pages/", "author": {"@type": "Organization", "name": "SBD Marketing"}, "publisher": {"@type": "Organization", "name": "SBD Marketing"}}</script></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="../../"><span class="mark">SBD</span>Criminal Defense SEO Field Notes</a><nav class="top"><a href="../../#articles">Articles</a><a href="../../#about">About</a></nav></div></header>
+<article><div class="narrow"><div class="crumb"><a href="../../">← Criminal Defense SEO Field Notes</a></div><h1>Cleaning Up Thin Archive Pages on a Criminal Defense Firm Blog</h1>
+<div class="byline">SBD Marketing · November 16, 2026 · 5 min read</div><nav class="toc"><b>In this article</b><ol><li><a href="#how-archive-pages-pile-up">How archive pages pile up</a></li><li><a href="#finding-every-archive-page-on-the-site">Finding every archive page on the site</a></li><li><a href="#deciding-which-archives-to-keep">Deciding which archives to keep</a></li><li><a href="#cleaning-up-without-breaking-the-site">Cleaning up without breaking the site</a></li><li><a href="#giving-the-surviving-category-pages-a-job">Giving the surviving category pages a job</a></li><li><a href="#what-to-watch-afterward">What to watch afterward</a></li><li><a href="#questions-defense-lawyers-ask-about-blog-archives">Questions defense lawyers ask about blog archives</a></li></ol></nav>
+<p>Most criminal defense websites run on WordPress or a similar system, and most of them have a blog that someone started with good intentions. Each post gets a category, a few tags, an author and a date. The software then builds a page for every one of those labels. A site with 60 posts can quietly end up with 200 or more archive pages that nobody wrote and nobody reads.</p>
+<p>Those pages are thin. A tag page for "bail" might list two posts, both of which already appear on the category page for "pretrial" and on the author page for the founding partner. When Google crawls the site, it spends time on these near-copies instead of on your charge pages. This article walks through how to find the archive pages on a defense firm blog, decide which ones earn a place in search, and clean up the rest without breaking anything.</p>
+<h2 id="how-archive-pages-pile-up">How archive pages pile up</h2>
+<p>Every content system handles this a little differently, but the pattern is the same. Categories and tags each get their own URL. Author pages exist even when one lawyer wrote everything. Date archives list posts by month and year. Paginated pages add /page/2/ and /page/3/ to every one of those lists.</p>
+<p>Tags cause the most trouble. Over the years, different people add tags without checking what already exists, so a firm ends up with "DUI", "DWI", "drunk driving", "dui arrest" and "DUI defense" as five separate tags. Each one produces an archive page with a slightly different mix of the same posts. None of them answers a question as well as your actual DUI charge page does.</p>
+<h2 id="finding-every-archive-page-on-the-site">Finding every archive page on the site</h2>
+<p>Start with a crawl. A desktop crawler such as Screaming Frog will list every URL it can reach from the homepage, and you can filter by folder to pull out /tag/, /category/, /author/ and date patterns. Count them. If archive URLs outnumber your posts and service pages combined, cleanup will be worth the time.</p>
+<p>Then check what Google already knows. In Search Console, open the Pages report and look at both indexed and not indexed URLs. Filter for the archive folders. Note which archive pages are indexed and whether any of them have earned clicks in the Performance report over the last 16 months. A few will. Most will show zero.</p>
+<p>If the site's XML sitemap includes tag or author sitemaps, write that down too. Sitemaps tell Google which URLs you consider worth crawling, and an archive sitemap full of thin pages sends the wrong message.</p>
+<h2 id="deciding-which-archives-to-keep">Deciding which archives to keep</h2>
+<p>Keep an archive page only if a real person would want to land on it from a search. For a defense firm, that is a short list. A category page that groups every post about one practice area can be useful if you give it an introduction, a clear heading and links to the matching charge pages. Everything else is a candidate for removal from the index.</p>
+<p>A quick way to sort them:</p>
+<ul><li>Keep and improve: one category page per major practice area, with written introductory text.</li><li>Noindex but leave live: author pages, date archives and paginated pages that help visitors browse but add nothing in search.</li><li>Merge or delete: duplicate tags that say the same thing in different words.</li><li>Redirect: any archive page that has earned links or clicks and has a clear equivalent, such as a charge page.</li></ul>
+<h2 id="cleaning-up-without-breaking-the-site">Cleaning up without breaking the site</h2>
+<p>Most SEO plugins let you set entire archive types to noindex in a few clicks. Use that for date archives and author pages first, since they are the easiest call. Leave the pages reachable for visitors and let Google drop them from results on its next crawls.</p>
+<p>For tags, do the merge work before you touch indexing settings. Pick one tag per topic, reassign posts to it, and delete the rest. If a deleted tag page had clicks or outside links, redirect it with a 301 to the closest category page or charge page. If it had nothing, a 404 is fine. Google's own documentation treats a 404 and a 410 the same way for indexing: the page drops out.</p>
+<p>Then fix the internal links. Themes often print a tag cloud in the sidebar or a list of tags under each post. Remove the tag cloud. Under posts, link to the category and to the charge page the post supports.</p>
+<p>Finally, remove the archive sitemaps you no longer want crawled and resubmit the main sitemap in Search Console. If you want to watch how each page type moves through indexing after a cleanup, <a href="https://dev.to/sbdmarketing/splitting-a-law-firm-sitemap-by-page-type-to-debug-indexing-56d8">splitting a sitemap by page type to debug indexing</a> makes the Search Console reports much easier to read.</p>
+<h2 id="giving-the-surviving-category-pages-a-job">Giving the surviving category pages a job</h2>
+<p>A category page that stays in the index should look like a page someone wrote on purpose. Add 150 to 300 words at the top explaining what the section covers and which courts or counties the posts discuss. Link prominently to the matching charge page so a reader who wants help can get there in one click. Write a unique title tag and meta description instead of the default "Archives" label your theme adds.</p>
+<h2 id="what-to-watch-afterward">What to watch afterward</h2>
+<p>Give it six to eight weeks. In Search Console, the count of indexed archive URLs should fall while your charge pages and posts stay put or rise. Crawl stats may show Google spending a larger share of its requests on the pages you care about. If a charge page loses clicks during the cleanup, check whether a redirect points somewhere unhelpful or whether an internal link went missing.</p>
+<p>You can find more on crawling, indexing and site structure in our <a href="https://officialsbdmarketing.code.blog/">technical SEO guides for law firm websites</a>.</p>
+<h2 id="questions-defense-lawyers-ask-about-blog-archives">Questions defense lawyers ask about blog archives</h2>
+<h3>Will removing tag pages hurt my rankings?</h3>
+<p>Rarely. Thin tag pages almost never rank for anything a client would search. Removing them usually helps Google spend more time on your charge pages. Redirect any tag page that has real clicks or links before deleting it.</p>
+<h3>Should I delete old blog posts too?</h3>
+<p>Not as part of this cleanup. Old posts are a separate decision. Review them for accuracy, especially where a law or penalty has changed, and update or retire them one at a time.</p>
+<h3>How often should archives be reviewed?</h3>
+<p>Once a year is enough for most firms, plus a quick check whenever someone new starts adding posts. Agree on a short list of categories and tags so the clutter does not come back.</p>
+<p>SBD Marketing works only with criminal defense firms, one firm per city, helping with website design, SEO for the charges a firm defends, visibility in AI search tools and SEO audits.</p>
+<div class="related"><b>More from Criminal Defense SEO Field Notes</b><ul><li><a href="../november-2026-core-update-defense-site-checks/">Checking a Defense Site During Google's November 2026 Core Update</a></li><li><a href="../year-over-year-search-data-seasonal-charges/">Reading Year-Over-Year Search Data for Seasonal Criminal Charges</a></li><li><a href="../weekly-seo-routine-defense-lawyer-new-to-marketing/">A Two-Hour Weekly SEO Routine for a Defense Lawyer New to Marketing</a></li><li><a href="../defense-firm-charge-page-cannibalization/">Ending Keyword Cannibalization Between Defense Firm Charge Pages</a></li></ul></div></div></article><footer><div class="wrap">© 2026 SBD Marketing · <a href="../../">Criminal Defense SEO Field Notes</a></div></footer>
+</body></html>
