@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spotting Broken Tracking Before It Skews a Defense Firm's Data</title><meta name="description" content="How a defense firm can catch broken analytics tags, lost call tracking and missing form events before bad numbers drive a bad marketing decision."><link rel="canonical" href="https://sbdmarketing.github.io/articles/spotting-broken-tracking-defense-firm-data/">
+<meta property="og:type" content="website"><meta property="og:title" content="Spotting Broken Tracking Before It Skews a Defense Firm&#x27;s Data"><meta property="og:description" content="How a defense firm can catch broken analytics tags, lost call tracking and missing form events before bad numbers drive a bad marketing decision."><meta property="og:url" content="https://sbdmarketing.github.io/articles/spotting-broken-tracking-defense-firm-data/">
+<meta name="robots" content="index,follow"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6bff'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='24' text-anchor='middle' fill='white'%3ESBD%3C/text%3E%3C/svg%3E">
+<style>
+:root{--dark:#0c1a33;--accent:#1f6bff;--soft:#eef4ff;--ink:#14161a;--muted:#5b6170;--line:#e4e7ee;--bg:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px;margin:0 auto;padding:0 20px}
+header.top{background:var(--dark);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.01em}
+.mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-size:13px;font-weight:900}
+nav.top a{color:#cfd6e6;text-decoration:none;font-size:15px;margin-left:18px}nav.top a:hover{color:#fff}
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark) 55%,var(--accent) 160%);color:#fff;padding:72px 0 64px}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:700;color:#9fb6ff}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:10px 0 16px;letter-spacing:-.02em;max-width:820px}
+.hero p{font-size:1.15rem;color:#dbe3f4;max-width:720px;margin:0 0 12px}
+.hero a{color:#fff;font-weight:700}
+.pill{display:inline-block;margin-top:18px;background:#fff;color:var(--dark)!important;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px}
+section{padding:56px 0}
+section.alt{background:var(--soft)}
+h2.sec{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.01em;margin:0 0 8px}
+p.lede{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(12,26,51,.10)}
+.card .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card h3{font-size:1.15rem;line-height:1.35;margin:0 0 10px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .more{margin-top:auto;padding-top:14px;color:var(--accent);font-weight:700;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tile{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line)}
+.tile b{display:block;margin-bottom:6px}
+article{padding:48px 0 24px}
+.crumb{font-size:14px;margin-bottom:18px}.crumb a{text-decoration:none;font-weight:600}
+article h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+.byline{color:var(--muted);font-size:14.5px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+article h2{font-size:1.5rem;line-height:1.3;margin:2.1em 0 .5em;letter-spacing:-.01em}
+article h3{font-size:1.15rem;margin:1.6em 0 .3em}
+article ul,article ol{padding-left:1.3em}article li{margin:.35em 0}
+.toc{background:var(--soft);border-radius:14px;padding:18px 22px;margin:0 0 28px;font-size:15.5px}
+.toc b{display:block;margin-bottom:6px}.toc ol{margin:0;padding-left:1.2em}
+.related{border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+.related ul{list-style:none;padding:0}.related li{margin:.5em 0}
+footer{background:var(--dark);color:#aeb8cc;font-size:14.5px;padding:32px 0;margin-top:40px}
+footer a{color:#fff}
+@media(max-width:640px){nav.top a{margin-left:12px;font-size:14px}.hero{padding:52px 0 44px}section{padding:40px 0}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Spotting Broken Tracking Before It Skews a Defense Firm's Data", "description": "How a defense firm can catch broken analytics tags, lost call tracking and missing form events before bad numbers drive a bad marketing decision.", "datePublished": "2026-11-19", "mainEntityOfPage": "https://sbdmarketing.github.io/articles/spotting-broken-tracking-defense-firm-data/", "author": {"@type": "Organization", "name": "SBD Marketing"}, "publisher": {"@type": "Organization", "name": "SBD Marketing"}}</script></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="../../"><span class="mark">SBD</span>Criminal Defense SEO Field Notes</a><nav class="top"><a href="../../#articles">Articles</a><a href="../../#about">About</a></nav></div></header>
+<article><div class="narrow"><div class="crumb"><a href="../../">← Criminal Defense SEO Field Notes</a></div><h1>Spotting Broken Tracking Before It Skews a Defense Firm's Data</h1>
+<div class="byline">SBD Marketing · November 19, 2026 · 5 min read</div><nav class="toc"><b>In this article</b><ol><li><a href="#why-defense-firm-data-breaks-so-often">Why defense firm data breaks so often</a></li><li><a href="#compare-two-sources-before-you-panic">Compare two sources before you panic</a></li><li><a href="#checks-to-run-after-every-site-change">Checks to run after every site change</a></li><li><a href="#keep-a-change-log-beside-the-reports">Keep a change log beside the reports</a></li><li><a href="#watch-the-numbers-that-break-first">Watch the numbers that break first</a></li><li><a href="#fixing-the-record-after-a-break">Fixing the record after a break</a></li><li><a href="#questions-about-broken-tracking">Questions about broken tracking</a></li></ol></nav>
+<p>A defense firm's search data usually breaks quietly. Someone updates a website theme, a plugin removes the analytics tag from a few templates, or a new contact form goes live without the event that used to record submissions. Nothing looks wrong on the site. The phones still ring. But a month later the reports show organic traffic down by a third, and the firm starts asking whether its rankings collapsed.</p>
+<p>Often the rankings are fine and the measurement is what failed. The trouble is that a broken report and a real decline look the same on a chart. Lawyers who make budget calls from these numbers deserve a way to tell them apart quickly, before a bad month of data turns into a bad decision about an SEO program or a website rebuild.</p>
+<h2 id="why-defense-firm-data-breaks-so-often">Why defense firm data breaks so often</h2>
+<p>Law firm sites change more often than people expect. New attorneys join and get bio pages. Practice areas are added. A firm switches call tracking vendors or replaces its chat widget. Each change touches the code that analytics depends on, and the person making the change is rarely the person who set up tracking.</p>
+<p>Defense sites also lean heavily on phone calls. Most people facing a charge would rather talk to someone than fill out a form, so a firm that loses call tracking loses its main conversion signal. A form that stops firing matters too, but a missing call number swap can hide most of the real results.</p>
+<h2 id="compare-two-sources-before-you-panic">Compare two sources before you panic</h2>
+<p>The fastest test is to check whether two independent systems agree. Google Search Console and Google Analytics measure different things in different ways, so their numbers never match exactly. They should move in the same direction, though.</p>
+<p>If Search Console shows clicks to your DUI page holding steady while analytics shows organic sessions on that page falling sharply, the problem is almost certainly in analytics. Search Console counts clicks from Google's side and does not depend on a tag on your site. When both drop together, the decline is more likely real and worth investigating as a search issue.</p>
+<p>Your phone system is a third witness. If call volume from the website looks normal to the front desk but the reports show calls collapsing, check the tracking number setup before anything else.</p>
+<h2 id="checks-to-run-after-every-site-change">Checks to run after every site change</h2>
+<p>A short routine after each update catches most breaks within a day or two. Keep it written down so whoever touches the site can run it.</p>
+<ol><li>Open the page that changed in a private browser window and confirm the analytics tag loads, using the browser's developer tools or the GA4 DebugView.</li><li>Submit a test form and confirm the event appears in GA4's realtime report.</li><li>Load the page from a Google search result and check that the tracking phone number appears in place of the main number, if your call tracking works that way.</li><li>Click the phone link on a mobile device and confirm the call is logged.</li></ol>
+<p>Mark test submissions clearly, such as "TEST, please ignore," so intake staff do not chase them.</p>
+<h2 id="keep-a-change-log-beside-the-reports">Keep a change log beside the reports</h2>
+<p>Most confusing charts are explained by something that happened on a known date. GA4 lets you add annotations to report charts, and a shared document with dates works just as well. Record theme updates, plugin changes, new pages, redirects, vendor switches and tracking changes. Note outside events too, such as a Google core update or a holiday weekend when arrests and searches tend to shift.</p>
+<p>When a line on a chart bends, the first question is what changed that week. A log turns a half-day investigation into a two-minute lookup.</p>
+<h2 id="watch-the-numbers-that-break-first">Watch the numbers that break first</h2>
+<p>Some metrics are early warnings. A sudden spike in direct traffic often means referral or campaign information is being lost, sometimes because a redirect strips parameters. A jump in sessions with no engagement can point to a duplicate tag firing twice. Conversions that drop to zero on a single day almost always mean a broken event rather than a real change in client behavior, because no firm goes from steady calls to none overnight.</p>
+<p>Grouping pages by practice area makes these breaks easier to see, since a problem on DUI pages will not hide inside sitewide totals. This walkthrough on <a href="https://dev.to/sbdmarketing/grouping-law-firm-pages-by-practice-area-in-ga4-reports-j0h">grouping law firm pages by practice area in GA4</a> shows one way to set that up. You can find more on reading reports and search data for defense firms in the <a href="https://officialsbdmarketing.data.blog/">library on legal marketing analytics and search data</a>.</p>
+<h2 id="fixing-the-record-after-a-break">Fixing the record after a break</h2>
+<p>Once you find a gap, you cannot recover the lost data in GA4. What you can do is mark the dates clearly so nobody compares a broken month with a healthy one. For year-over-year comparisons, exclude the affected period or lean on Search Console clicks, which were never affected.</p>
+<p>Then fix the cause, run the checks again and confirm the numbers return to their old pattern within a few days. If they do not, the break may be in more than one place.</p>
+<h2 id="questions-about-broken-tracking">Questions about broken tracking</h2>
+<h3>How quickly should a firm notice a tracking break?</h3>
+<p>Within a week is a reasonable goal. A weekly glance at conversions and organic sessions by practice area, compared with the prior few weeks, catches most problems before they distort a whole month.</p>
+<h3>Can Search Console replace Google Analytics?</h3>
+<p>No. Search Console shows how your pages perform in Google results, including queries and clicks. It does not show what visitors do once they arrive, such as calling or submitting a form.</p>
+<h3>Who should own tracking at a small defense firm?</h3>
+<p>One named person, inside the firm or at a vendor, who is told before any site change and runs the checks afterward. Shared responsibility tends to mean nobody checks.</p>
+<p>SBD Marketing works only with criminal defense law firms, one firm per city. It builds websites for defense practices, handles SEO for the charges a firm defends, works on visibility in AI search tools such as ChatGPT and Gemini, and runs SEO audits.</p>
+<div class="related"><b>More from Criminal Defense SEO Field Notes</b><ul><li><a href="../how-google-ranks-defense-firm-pages-plain-explanation/">A Plain Explanation of How Google Ranks a Defense Firm's Pages</a></li><li><a href="../charge-page-title-tags-meta-descriptions/">Writing Title Tags and Meta Descriptions for Defense Charge Pages</a></li><li><a href="../defense-firm-blog-thin-archive-pages/">Cleaning Up Thin Archive Pages on a Criminal Defense Firm Blog</a></li><li><a href="../november-2026-core-update-defense-site-checks/">Checking a Defense Site During Google's November 2026 Core Update</a></li></ul></div></div></article><footer><div class="wrap">© 2026 SBD Marketing · <a href="../../">Criminal Defense SEO Field Notes</a></div></footer>
+</body></html>
