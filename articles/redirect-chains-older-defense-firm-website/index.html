@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cleaning Up Redirect Chains on an Older Defense Firm Website</title><meta name="description" content="How redirect chains build up on older criminal defense websites, how to find them, and how to fix them so charge pages keep the value of their old links."><link rel="canonical" href="https://sbdmarketing.github.io/articles/redirect-chains-older-defense-firm-website/">
+<meta property="og:type" content="website"><meta property="og:title" content="Cleaning Up Redirect Chains on an Older Defense Firm Website"><meta property="og:description" content="How redirect chains build up on older criminal defense websites, how to find them, and how to fix them so charge pages keep the value of their old links."><meta property="og:url" content="https://sbdmarketing.github.io/articles/redirect-chains-older-defense-firm-website/">
+<meta name="robots" content="index,follow"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6bff'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='24' text-anchor='middle' fill='white'%3ESBD%3C/text%3E%3C/svg%3E">
+<style>
+:root{--dark:#0c1a33;--accent:#1f6bff;--soft:#eef4ff;--ink:#14161a;--muted:#5b6170;--line:#e4e7ee;--bg:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px;margin:0 auto;padding:0 20px}
+header.top{background:var(--dark);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.01em}
+.mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-size:13px;font-weight:900}
+nav.top a{color:#cfd6e6;text-decoration:none;font-size:15px;margin-left:18px}nav.top a:hover{color:#fff}
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark) 55%,var(--accent) 160%);color:#fff;padding:72px 0 64px}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:700;color:#9fb6ff}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:10px 0 16px;letter-spacing:-.02em;max-width:820px}
+.hero p{font-size:1.15rem;color:#dbe3f4;max-width:720px;margin:0 0 12px}
+.hero a{color:#fff;font-weight:700}
+.pill{display:inline-block;margin-top:18px;background:#fff;color:var(--dark)!important;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px}
+section{padding:56px 0}
+section.alt{background:var(--soft)}
+h2.sec{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.01em;margin:0 0 8px}
+p.lede{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(12,26,51,.10)}
+.card .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card h3{font-size:1.15rem;line-height:1.35;margin:0 0 10px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .more{margin-top:auto;padding-top:14px;color:var(--accent);font-weight:700;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tile{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--line)}
+.tile b{display:block;margin-bottom:6px}
+article{padding:48px 0 24px}
+.crumb{font-size:14px;margin-bottom:18px}.crumb a{text-decoration:none;font-weight:600}
+article h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+.byline{color:var(--muted);font-size:14.5px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+article h2{font-size:1.5rem;line-height:1.3;margin:2.1em 0 .5em;letter-spacing:-.01em}
+article h3{font-size:1.15rem;margin:1.6em 0 .3em}
+article ul,article ol{padding-left:1.3em}article li{margin:.35em 0}
+.toc{background:var(--soft);border-radius:14px;padding:18px 22px;margin:0 0 28px;font-size:15.5px}
+.toc b{display:block;margin-bottom:6px}.toc ol{margin:0;padding-left:1.2em}
+.related{border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+.related ul{list-style:none;padding:0}.related li{margin:.5em 0}
+footer{background:var(--dark);color:#aeb8cc;font-size:14.5px;padding:32px 0;margin-top:40px}
+footer a{color:#fff}
+@media(max-width:640px){nav.top a{margin-left:12px;font-size:14px}.hero{padding:52px 0 44px}section{padding:40px 0}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cleaning Up Redirect Chains on an Older Defense Firm Website", "description": "How redirect chains build up on older criminal defense websites, how to find them, and how to fix them so charge pages keep the value of their old links.", "datePublished": "2026-11-23", "mainEntityOfPage": "https://sbdmarketing.github.io/articles/redirect-chains-older-defense-firm-website/", "author": {"@type": "Organization", "name": "SBD Marketing"}, "publisher": {"@type": "Organization", "name": "SBD Marketing"}}</script></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="../../"><span class="mark">SBD</span>Criminal Defense SEO Field Notes</a><nav class="top"><a href="../../#articles">Articles</a><a href="../../#about">About</a></nav></div></header>
+<article><div class="narrow"><div class="crumb"><a href="../../">← Criminal Defense SEO Field Notes</a></div><h1>Cleaning Up Redirect Chains on an Older Defense Firm Website</h1>
+<div class="byline">SBD Marketing · November 23, 2026 · 5 min read</div><nav class="toc"><b>In this article</b><ol><li><a href="#how-a-chain-forms-on-a-law-firm-site">How a chain forms on a law firm site</a></li><li><a href="#what-google-says-about-redirect-hops">What Google says about redirect hops</a></li><li><a href="#finding-the-chains">Finding the chains</a></li><li><a href="#fixing-them-without-breaking-anything">Fixing them without breaking anything</a></li><li><a href="#keeping-chains-from-coming-back">Keeping chains from coming back</a></li><li><a href="#questions-defense-lawyers-ask-about-redirect-chains">Questions defense lawyers ask about redirect chains</a></li></ol></nav>
+<p>Most defense firm websites that have been around for ten years carry some history. The firm changed its name when a partner left. The site moved from http to https, then from a www address to a bare domain. A developer rebuilt the practice area section and renamed every DUI page. Each change added a redirect, and nobody went back to clean up the older ones.</p>
+<p>The result is a redirect chain: an old URL that sends visitors to a second URL, which sends them to a third, which finally lands on the live charge page. A person clicking through barely notices. Search crawlers notice more, and links that other sites pointed at your old pages have to pass through another hop each time the site changes.</p>
+<h2 id="how-a-chain-forms-on-a-law-firm-site">How a chain forms on a law firm site</h2>
+<p>Picture a page about felony drug possession. In 2016 it lived at /practice-areas/drug-crimes.html. A 2019 redesign moved it to /drug-charges/, with a redirect from the old address. In 2022 the firm switched to https and dropped the www. In 2025 the page was split into possession and trafficking pages, and /drug-charges/ was redirected to the possession page.</p>
+<p>Now a link from a 2017 bar association article hits the http www version of the 2016 URL. That request may pass through four or five redirects before it reaches a page. Each rebuild was handled correctly on its own terms. The trouble is that each one only pointed the previous address forward by one step.</p>
+<h2 id="what-google-says-about-redirect-hops">What Google says about redirect hops</h2>
+<p>Google's documentation on HTTP status codes says its crawlers follow up to 10 redirect hops, and past that the URL is reported as a redirect error in Search Console. Most firm sites never get near ten. That limit is a ceiling, though, and Google staff have said publicly for years that fewer hops are better, with a common suggestion to keep chains under five.</p>
+<p>Shorter chains help in less obvious ways too. Each hop adds a round trip on a phone with a weak signal, which is how many people read a defense site in a hallway at the jail or in a parked car. Each hop is also another place for a mistake to creep in, such as a temporary 302 where a permanent 301 was meant, or a loop that sends the crawler back to where it started.</p>
+<h2 id="finding-the-chains">Finding the chains</h2>
+<p>You need a list of every old URL that might still be requested. Good sources:</p>
+<ul><li>The redirect rules on your server or in your CMS plugin</li><li>Old XML sitemaps saved from past versions of the site</li><li>The pages report in Search Console, filtered for redirects</li><li>Backlink reports showing which old URLs other sites link to</li><li>Your analytics landing page report from before each redesign</li></ul>
+<p>Run that list through a crawler or a simple script that follows redirects one step at a time and records each hop. You want three columns at the end: the starting URL, the number of hops, and the final destination with its status code.</p>
+<p>Sort by hop count. Anything with two or more hops is a chain worth fixing. Anything that ends in a 404, or in a redirect to the homepage for a page that once covered a specific charge, deserves its own look.</p>
+<h2 id="fixing-them-without-breaking-anything">Fixing them without breaking anything</h2>
+<p>The fix for a chain is to point every old URL straight at the final destination in a single 301. In the drug possession example, the 2016 address, the 2019 address and every http and www variant should all redirect directly to the current possession page.</p>
+<p>A few rules keep this safe:</p>
+<ol><li>Export your current redirect rules before you change them, so you can roll back.</li><li>Update rules from the oldest outward, and handle the protocol and host change (http to https, www to bare) in one combined step where your server allows it.</li><li>Send each old charge page to the closest current page about the same charge, never to the homepage by default.</li><li>Re-run the crawl after deploying and confirm every starting URL now reaches a 200 page in one hop.</li><li>Update internal links in your own content so they point at final URLs and never rely on a redirect at all.</li></ol>
+<p>That last step matters more than it sounds. Old blog posts on defense sites often link to charge pages by their 2016 addresses. Fixing those links removes the chain from your own site completely, and it costs nothing. For a wider view of the planning that keeps a big move clean, the <a href="https://hackmd.io/@E3AX0ZSGSh28GcKhO-YgEQ/defense-firm-website-domain-move-checklist">checklist for moving a defense firm website to a new domain</a> covers the steps that usually create these chains in the first place.</p>
+<h2 id="keeping-chains-from-coming-back">Keeping chains from coming back</h2>
+<p>The cheapest chain to fix is the one that never forms. Before any rebuild, keep a spreadsheet of every live URL and its planned new address. When you add redirects for the rebuild, search the existing rules for any that point at a URL you are about to retire, and update them in the same release.</p>
+<p>Assign one person to own redirect rules, even at a three-lawyer firm. Agencies and freelancers change over the years, and chains often start when a new developer adds rules on top of the old ones without reading them. A short note in your site documentation saying where redirects live and who changes them saves the next person an afternoon.</p>
+<p>If you want more developer-minded reading on law firm site structure, there are <a href="https://officialsbdmarketing.code.blog/">technical notes on building and maintaining law firm websites</a> that go further into the code side.</p>
+<h2 id="questions-defense-lawyers-ask-about-redirect-chains">Questions defense lawyers ask about redirect chains</h2>
+<h3>Will fixing redirect chains raise my rankings?</h3>
+<p>It can help pages that have old links pointing at them, and it removes a source of crawl errors. It rarely moves rankings by itself. Think of it as maintenance that lets your other SEO work count fully.</p>
+<h3>Should I ever remove old redirects?</h3>
+<p>Keep redirects for any URL that still has outside links or still gets visits. Rules for URLs with no links and no traffic for several years can be retired, but there is little cost in keeping them if they point straight to the right page.</p>
+<h3>How often should we check for chains?</h3>
+<p>After every redesign or URL change, and once or twice a year otherwise. With a crawler it takes an hour or two.</p>
+<p>SBD Marketing works only with criminal defense firms, one firm per city. It builds websites for defense practices, handles SEO for the charges a firm defends, works on visibility in AI search tools and runs SEO audits that include redirect checks like these.</p>
+<div class="related"><b>More from Criminal Defense SEO Field Notes</b><ul><li><a href="../search-console-api-branded-queries-defense-firms/">Search Console's API Now Splits Branded Queries: Defense Firm Notes</a></li><li><a href="../spotting-broken-tracking-defense-firm-data/">Spotting Broken Tracking Before It Skews a Defense Firm's Data</a></li><li><a href="../how-google-ranks-defense-firm-pages-plain-explanation/">A Plain Explanation of How Google Ranks a Defense Firm's Pages</a></li><li><a href="../charge-page-title-tags-meta-descriptions/">Writing Title Tags and Meta Descriptions for Defense Charge Pages</a></li></ul></div></div></article><footer><div class="wrap">© 2026 SBD Marketing · <a href="../../">Criminal Defense SEO Field Notes</a></div></footer>
+</body></html>
